@@ -1,4 +1,4 @@
-<img width="337" height="569" alt="image" src="https://github.com/user-attachments/assets/3e7d7a0b-d454-40a7-b03e-c9c95e154739" /># Weather Widget
+# Weather Widget
 
 Always-on-top weather widget for Windows, distributed as a standalone `.exe`.
 Погодный виджет для Windows поверх всех окон, готовый к запуску через `.exe`.
