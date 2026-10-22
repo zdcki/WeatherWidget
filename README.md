@@ -52,9 +52,6 @@ The application is distributed as an executable, so the AutoHotkey source settin
 - City search: Open-Meteo geocoding, falling back to OpenStreetMap Nominatim; a small built-in city list works offline
 - Rain/snow timing is approximate: 15-minute steps with Open-Meteo, hourly with MET Norway, 3-hour with wttr.in
 
-### License
-Add a license of your choice (for example MIT).
-
 ---
 
 ## Русский
@@ -99,5 +96,4 @@ Add a license of your choice (for example MIT).
 - Поиск города: геокодер Open-Meteo, запасной вариант OpenStreetMap Nominatim; небольшой встроенный список городов работает без интернета
 - Время начала дождя/снега приблизительное: шаг 15 минут у Open-Meteo, час у MET Norway, 3 часа у wttr.in
 
-### Лицензия
-Добавьте лицензию на ваш выбор (например, MIT).
+
