@@ -1,0 +1,2 @@
+# WeatherWidget
+WeatherWidget for pc
