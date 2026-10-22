@@ -1,9 +1,10 @@
-# Weather Widget
+<img width="337" height="569" alt="image" src="https://github.com/user-attachments/assets/3e7d7a0b-d454-40a7-b03e-c9c95e154739" /># Weather Widget
 
-Always-on-top weather widget for Windows, written in AutoHotkey v2.
-Погодный виджет для Windows поверх всех окон, написан на AutoHotkey v2.
+Always-on-top weather widget for Windows, distributed as a standalone `.exe`.
+Погодный виджет для Windows поверх всех окон, готовый к запуску через `.exe`.
 
-> Add a screenshot here / Добавьте сюда скриншот: `![screenshot](screenshot.png)`
+<img width="337" height="569" alt="image" src="https://github.com/user-attachments/assets/ac891ec9-c957-4d8f-be08-3be3584488a6" />
+
 
 [English](#english) · [Русский](#русский)
 
@@ -25,11 +26,11 @@ Always-on-top weather widget for Windows, written in AutoHotkey v2.
 - Autostart with Windows, Russian and English UI (follows Windows language)
 
 ### Install
-1. Install [AutoHotkey v2](https://www.autohotkey.com/).
-2. Download `weather.ahk` and double-click it.
-3. On first run enter your city (or coordinates like `55.08, 38.78`). Autostart is enabled automatically and can be switched off in the menu.
+1. Download or copy `WeatherWidget.exe` to a folder of your choice.
+2. Double-click `WeatherWidget.exe` to launch it.
+3. On first run, enter your city (or coordinates like `55.08, 38.78`). Autostart is enabled automatically and can be switched off in the menu.
 
-Requires Windows 10/11 with PowerShell (built in). No other dependencies.
+No separate AutoHotkey installation is required. Requires Windows 10/11 with PowerShell (built in).
 
 ### Usage
 Right-click the widget or the tray icon for the menu: refresh, city, view and size, units, notifications, hotkeys, autostart, language.
@@ -38,7 +39,8 @@ Drag the widget with the left mouse button.
 In click-through mode the widget's own menu is unavailable, so use the tray icon or the `F8` hotkey.
 
 ### Customizing the file
-- `menuOrder` (top of the file): reorder or remove menu items
+The application is distributed as an executable, so the AutoHotkey source settings below can only be changed by editing the source and rebuilding the `.exe`:
+- `menuOrder` (top of the source file): reorder or remove menu items
 - `windAlert`: wind speed (m/s) that triggers the wind warning
 - `notifyLead`: minutes before rain/snow when the notice appears
 - `tNote` line: size and position of the rain/snow notice
@@ -71,29 +73,30 @@ Add a license of your choice (for example MIT).
 - Автозапуск с Windows, интерфейс на русском и английском (по языку Windows)
 
 ### Установка
-1. Установите [AutoHotkey v2](https://www.autohotkey.com/).
-2. Скачайте `weather.ahk` и запустите двойным кликом.
-3. При первом запуске введите город (или координаты, например `55.08, 38.78`). Автозапуск включается сам, отключить можно в меню.
+1. Скачайте или скопируйте `WeatherWidget.exe` в любую удобную папку.
+2. Запустите `WeatherWidget.exe` двойным щелчком.
+3. При первом запуске введите город (или координаты, например `55.08, 38.78`). Автозапуск включается автоматически; отключить его можно в меню.
 
-Нужны Windows 10/11 и PowerShell (встроен). Других зависимостей нет.
+Отдельно устанавливать AutoHotkey не нужно. Требуются Windows 10/11 и PowerShell (уже встроен в Windows).
 
 ### Использование
-ПКМ по виджету или иконке в трее открывает меню: обновить, город, вид и размер, единицы, уведомления, горячие клавиши, автозапуск, язык.
+Нажмите ПКМ по виджету или его значку в системном трее, чтобы открыть меню: обновление погоды, выбор города, вида и размера, единиц измерения, уведомлений, горячих клавиш, автозапуска и языка.
 Виджет перетаскивается левой кнопкой мыши.
 
-В сквозном режиме меню виджета недоступно: пользуйтесь иконкой в трее или клавишей `F8`.
+В сквозном режиме меню самого виджета недоступно: используйте значок в системном трее или клавишу `F8`.
 
-### Настройка через файл
-- `menuOrder` (начало файла): порядок и состав пунктов меню
-- `windAlert`: скорость ветра (м/с) для предупреждения
-- `notifyLead`: за сколько минут до дождя/снега появляется уведомление
-- строка `tNote`: размер и положение уведомления
-- В `BuildMenu` блок между комментариями `ТЕСТЫ УВЕДОМЛЕНИЙ` добавляет пункты тестов; закомментируйте его, чтобы скрыть
+### Настройка
+В готовом `.exe` нельзя напрямую менять параметры исходного скрипта. Чтобы изменить перечисленные настройки, нужно отредактировать исходный код и заново собрать приложение:
+- `menuOrder` (в начале исходного файла): порядок и состав пунктов меню
+- `windAlert`: скорость ветра (м/с), при которой появляется предупреждение
+- `notifyLead`: за сколько минут до дождя или снега появляется уведомление
+- строка `tNote`: размер и положение уведомления о дожде/снеге
+- В `BuildMenu` блок между комментариями `ТЕСТЫ УВЕДОМЛЕНИЙ` добавляет пункты тестирования уведомлений; закомментируйте его в исходном коде, чтобы скрыть эти пункты
 
 ### Данные и файлы
 - Настройки и кэш: `%AppData%\WeatherWidget\` (`settings.txt`, `cache.txt`)
 - Источники прогноза: [Open-Meteo](https://open-meteo.com/), [MET Norway](https://api.met.no/), [wttr.in](https://wttr.in/)
-- Поиск города: геокодер Open-Meteo, запасной OpenStreetMap Nominatim; небольшой встроенный список городов работает офлайн
+- Поиск города: геокодер Open-Meteo, запасной вариант OpenStreetMap Nominatim; небольшой встроенный список городов работает без интернета
 - Время начала дождя/снега приблизительное: шаг 15 минут у Open-Meteo, час у MET Norway, 3 часа у wttr.in
 
 ### Лицензия
